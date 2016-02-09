@@ -5,6 +5,7 @@ public class buildSpot : MonoBehaviour {
 
     public GameObject buildPanel; //t he build pqanel
     public GameObject buildPrefab;
+    public GameObject[] towers; //This is an array of the tower types  that the player has available
 
 
     // Use this for initialization
@@ -17,6 +18,11 @@ public class buildSpot : MonoBehaviour {
     void OnMouseUp()
     {
         buildPanel.SetActive(true);
+    }
+
+    public void buildTower(int building)
+    {
+        Instantiate(towers[building], transform.position, Quaternion.identity);
     }
 
 

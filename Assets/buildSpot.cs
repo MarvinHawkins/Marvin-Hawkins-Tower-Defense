@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+
 
 public class buildSpot : MonoBehaviour {
 
@@ -11,8 +13,9 @@ public class buildSpot : MonoBehaviour {
     // Use this for initialization
     void Start () {
         buildPanel = Instantiate(buildPrefab) as GameObject;
+        buildPanel.transform.SetParent(transform, false);
         buildPanel.SetActive(false);
-
+       
     }
 
     void OnMouseUp()
@@ -20,11 +23,7 @@ public class buildSpot : MonoBehaviour {
         buildPanel.SetActive(true);
     }
 
-    public void buildTower(int building)
-    {
-        Instantiate(towers[building], transform.position, Quaternion.identity);
-    }
-
+   
 
     // Update is called once per frame
     void Update () {
